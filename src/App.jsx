@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
-import Login from "./Login";
+import Login from "./login";
 import Dashboard from "./Dashboard";
 import Barang from "./Barang";
 import Transaksi from "./Transaksi";
