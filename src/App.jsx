@@ -4,6 +4,7 @@ import Login from "./Login";
 import Dashboard from "./Dashboard";
 import Barang from "./Barang";
 import Transaksi from "./Transaksi";
+// import BahanBaku from "./BahanBaku";
 
 import Layout from "./Layout";
 import ProtectedRoute from "./ProtectedRoute";
@@ -45,6 +46,10 @@ function App() {
                         path="/transaksi"
                         element={<Transaksi />}
                     />
+                    {/* <Route
+                        path="/bahan-baku"
+                        element={<BahanBaku />}
+                    /> */}
                 </Route>
             </Route>
 

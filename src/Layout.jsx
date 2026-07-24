@@ -101,6 +101,19 @@ function Layout(){
                         Transaksi
                     </NavLink>
                 </li>
+                {/* <li>
+                    <NavLink
+                        to="/bahan-baku"
+                        onClick={() => setOpen(false)}
+                        className={({ isActive }) =>
+                            isActive
+                                ? "block bg-amber-700 p-3 rounded-lg text-white"
+                                : "block hover:bg-gray-300 p-3 rounded-lg"
+                        }
+                    >
+                        Bahan Baku
+                    </NavLink>
+                </li> */}
 
             </ul>
 

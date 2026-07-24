@@ -180,8 +180,10 @@ data.barang.forEach((item) => {
     }
 
     catch(err){
-
-        console.log(err);
+console.log(error.response);
+console.log(error.response.data);
+console.log(error.response.data.error);
+ console.log(err);
 
     }
 
@@ -359,6 +361,9 @@ const hapusBarang = (index)=>{
         console.log(err.response);
 
         console.log(err.response?.data);
+        console.log(error.response);
+console.log(error.response.data);
+console.log(error.response.data.error);
 
     } finally{
 
@@ -1555,51 +1560,24 @@ Batal
     <div className="flex flex-col md:flex-row justify-between gap-3">
 
         {/* kiri */}
+ <div className="flex gap-2">
+   <button
+    onClick={() => exportDetailPdf(selectedTransaksi.id)}
+    className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg"
+>
+    <i className="bi bi-file-earmark-pdf me-2"></i>
+    PDF
+</button>
 
-        <div className="flex gap-3">
-
-            <button
-                onClick={() =>
-                    exportDetailExcel(selectedTransaksi.id)
-                }
-                className="flex items-center gap-2
-                           bg-green-600
-                           hover:bg-green-700
-                           text-white
-                           px-5
-                           py-3
-                           rounded-lg
-                           transition"
-            >
-
-                <FiFile />
-
-                Export Excel
-
-            </button>
-
-            <button
-                onClick={() =>
-                    exportDetailPdf(selectedTransaksi.id)
-                }
-                className="flex items-center gap-2
-                           bg-red-600
-                           hover:bg-red-700
-                           text-white
-                           px-5
-                           py-3
-                           rounded-lg
-                           transition"
-            >
-
-                <FiFileText />
-
-                Export PDF
-
-            </button>
-
-        </div>
-
+<button
+    onClick={() => exportDetailExcel(selectedTransaksi.id)}
+    className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg"
+>
+    <i className="bi bi-file-earmark-excel me-2"></i>
+    Excel
+</button>
+  </div>
+       
         {/* kanan */}
 
         <button
