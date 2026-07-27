@@ -463,7 +463,7 @@ function Transaksi() {
   const updateTransaksi = async () => {
     if (!validateUpdate(selectedTransaksi)) return;
     try {
-      await api.put(`/transaksi/${selectedTransaksi.id}`, {
+      await api.put(`${import.meta.env.VITE_API_URL}/transaksi/${selectedTransaksi.id}`, {
         tanggal: selectedTransaksi.tanggal,
         tipe_transaksi: selectedTransaksi.tipe_transaksi,
         nama_pelanggan: selectedTransaksi.nama_pelanggan,
