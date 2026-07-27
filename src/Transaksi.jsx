@@ -463,7 +463,7 @@ function Transaksi() {
   const updateTransaksi = async () => {
     if (!validateUpdate(selectedTransaksi)) return;
     try {
-      await api.put(`${import.meta.env.VITE_API_URL}/transaksi/${selectedTransaksi.id}`, {
+      await api.put(`/transaksi/${selectedTransaksi.id}`, {
         tanggal: selectedTransaksi.tanggal,
         tipe_transaksi: selectedTransaksi.tipe_transaksi,
         nama_pelanggan: selectedTransaksi.nama_pelanggan,
@@ -486,10 +486,14 @@ function Transaksi() {
 
       setShowUpdate(false);
     } catch (err) {
-      console.log(err.response.data);
-    } finally {
-      setLoading((prev) => ({ ...prev, update: false }));
-    }
+  console.log(err);
+
+  if (err.response) {
+    console.log(err.response.data);
+  } else {
+    console.log(err.message);
+  }
+}
   };
   const handleUpdateChange = (e) => {
     const { name, value } = e.target;
