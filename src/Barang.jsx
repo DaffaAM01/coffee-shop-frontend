@@ -271,16 +271,16 @@ function Barang() {
   return data.includes(keyword);
 });
 const exportExcel = () => {
-    window.open(
-        `http://127.0.0.1:8000/api/barang/export/excel?search=${encodeURIComponent(search)}`,
-        "_blank"
-    );
+   window.open(
+    `${import.meta.env.VITE_API_URL}/barang/export/excel?search=${encodeURIComponent(search)}`,
+    "_blank"
+);
 };
 const exportPdf = () => {
     window.open(
-        `http://127.0.0.1:8000/api/barang/export/pdf?search=${encodeURIComponent(search)}`,
-        "_blank"
-    );
+    `${import.meta.env.VITE_API_URL}/barang/export/pdf?search=${encodeURIComponent(search)}`,
+    "_blank"
+);
 };
   const totalPages = Math.ceil(filteredBarang.length / itemsPerPage);
 
@@ -422,10 +422,10 @@ const exportPdf = () => {
 </td>
                   <td className="px-2 py-2 md:p-3 text-xs md:text-sm text-center">
                     <img
-                      src={item.gambar}
-                      className="w-10 h-10 md:w-16 md:h-16 object-cover rounded"
-                      alt={item.nama}
-                    />
+    src={`${import.meta.env.VITE_API_URL.replace("/api","")}/storage/${item.gambar}`}
+    className="w-10 h-10 md:w-16 md:h-16 object-cover rounded"
+    alt={item.nama}
+/>
                   </td>
                   <td className="px-2 py-2 md:p-3 text-xs md:text-sm">{item.kategori}</td>
                   <td className="px-2 py-2 md:p-3 text-xs md:text-sm">
@@ -773,10 +773,12 @@ rounded
                 />
 
                 <p className="text-center text-sm text-gray-600 mt-3 break-all">
-                  {selectedBarang.gambar instanceof File
-                    ? selectedBarang.gambar.name
-                    : selectedBarang.gambar.split("/").pop()}
-                </p>
+  {selectedBarang.gambar instanceof File
+    ? selectedBarang.gambar.name
+    : selectedBarang.gambar
+      ? selectedBarang.gambar.split("/").pop()
+      : "Belum ada gambar"}
+</p>
                 <label
                   htmlFor="gambar"
                   className="mt-3 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded cursor-pointer"

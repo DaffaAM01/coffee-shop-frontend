@@ -76,25 +76,6 @@ function RegisterUser() {
               />
             </div>
           </div>
-
-          <div>
-            <label>No HP</label>
-
-            <div className="border rounded-lg flex items-center mt-2 px-3">
-              <FaPhone className="text-gray-400" />
-
-              <input
-                required
-                type="text"
-                name="no_hp"
-                value={formData.no_hp}
-                onChange={handleChange}
-                className="w-full p-3 outline-none"
-                placeholder="08xxxxxxxxxx"
-              />
-            </div>
-          </div>
-
           <div>
             <label>Password</label>
 

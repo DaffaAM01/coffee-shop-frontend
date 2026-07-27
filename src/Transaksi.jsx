@@ -373,33 +373,33 @@ console.log(error.response.data.error);
 
 }
 const exportExcel = () => {
-    window.open(
-        `http://127.0.0.1:8000/api/transaksi/export/excel?search=${encodeURIComponent(search)}`,
-        "_blank"
-    );
+   window.open(
+    `${import.meta.env.VITE_API_URL}/transaksi/export/pdf?search=${encodeURIComponent(search)}`,
+    "_blank"
+);
 };
 const exportPdf = () => {
     window.open(
-        `http://127.0.0.1:8000/api/transaksi/export/pdf?search=${encodeURIComponent(search)}`,
+        `${import.meta.env.VITE_API_URL}/transaksi/export/pdf?search=${encodeURIComponent(search)}`,
         "_blank"
     );
 };
 const exportDetailExcel = (id) => {
     window.open(
-        `http://127.0.0.1:8000/api/detail-transaksi/${id}/export-excel`,
+        `${import.meta.env.VITE_API_URL}/detail-transaksi/${id}/export-excel`,
         "_blank"
     );
 };
 
 const exportDetailPdf = (id) => {
     window.open(
-        `http://127.0.0.1:8000/api/detail-transaksi/${id}/export-pdf`,
+        `${import.meta.env.VITE_API_URL}/detail-transaksi/${id}/export-pdf`,
         "_blank"
     );
 };
 const cetakStruk = (id) => {
     window.open(
-        `http://127.0.0.1:8000/api/transaksi/${id}/struk`,
+        `${import.meta.env.VITE_API_URL}/transaksi/${id}/struk`,
         "_blank"
     );
 };

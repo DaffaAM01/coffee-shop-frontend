@@ -15,13 +15,13 @@ function HeroSlider() {
             autoplay={{ delay: 3000 }}
             pagination={{ clickable: true }}
             loop={true}
-            className=" w-full h-[450px]"
+            className=" w-full h-112.5"
         >
             <SwiperSlide>
                 <img
                     src={food1}
                     alt="Food 1"
-                    className="w-full h-64 md:h-[450px] object-cover"
+                    className="w-full h-64 md:h-112.5 object-cover"
                 />
             </SwiperSlide>
 
@@ -29,7 +29,7 @@ function HeroSlider() {
                 <img
                     src={food2}
                     alt="Food 2"
-                    className="w-full h-64 md:h-[450px] object-cover"
+                    className="w-full h-64 md:h-112.5 object-cover"
                 />
             </SwiperSlide>
 
@@ -37,7 +37,7 @@ function HeroSlider() {
                 <img
                     src={food3}
                     alt="Food 3"
-                    className="w-full h-64 md:h-[450px] object-cover"
+                    className="w-full h-64 md:h-112.5 object-cover"
                 />
             </SwiperSlide>
         </Swiper>
